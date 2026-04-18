@@ -6,9 +6,9 @@
 
 <br>
 
-[![](https://img.shields.io/badge/◈_Engenharia_de_Software-161b22?style=flat-square&logoColor=C9A84C)](https://github.com/euguilouren)&nbsp;
-[![](https://img.shields.io/badge/◈_Ciências_Contábeis-161b22?style=flat-square&logoColor=C9A84C)](https://github.com/euguilouren)&nbsp;
-[![](https://img.shields.io/badge/◈_Brasília,_Brasil_🇧🇷-161b22?style=flat-square&logoColor=C9A84C)](https://github.com/euguilouren)
+<img src="https://img.shields.io/badge/◈_Engenharia_de_Software-161b22?style=flat-square&logoColor=C9A84C" />&nbsp;
+<img src="https://img.shields.io/badge/◈_Ciências_Contábeis-161b22?style=flat-square&logoColor=C9A84C" />&nbsp;
+<img src="https://img.shields.io/badge/◈_Brasília,_Brasil_🇧🇷-161b22?style=flat-square&logoColor=C9A84C" />
 
 <img src="https://komarev.com/ghpvc/?username=euguilouren&label=Visualizacoes&color=C9A84C&style=flat-square" />
 
@@ -61,15 +61,15 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br><br>
 
-![Python](https://img.shields.io/badge/Python-0d1117?style=for-the-badge&logo=python&logoColor=C9A84C)
-![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=C9A84C)
-![JavaScript](https://img.shields.io/badge/JavaScript-0d1117?style=for-the-badge&logo=javascript&logoColor=C9A84C)
-![Go](https://img.shields.io/badge/Go-0d1117?style=for-the-badge&logo=go&logoColor=C9A84C)
-![Rust](https://img.shields.io/badge/Rust-0d1117?style=for-the-badge&logo=rust&logoColor=C9A84C)
-![Java](https://img.shields.io/badge/Java-0d1117?style=for-the-badge&logo=openjdk&logoColor=C9A84C)
-![Kotlin](https://img.shields.io/badge/Kotlin-0d1117?style=for-the-badge&logo=kotlin&logoColor=C9A84C)
-![C](https://img.shields.io/badge/C-0d1117?style=for-the-badge&logo=c&logoColor=C9A84C)
-![C++](https://img.shields.io/badge/C++-0d1117?style=for-the-badge&logo=cplusplus&logoColor=C9A84C)
+[![Python](https://img.shields.io/badge/Python-0d1117?style=for-the-badge&logo=python&logoColor=C9A84C)](https://www.python.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=C9A84C)](https://www.typescriptlang.org)
+[![JavaScript](https://img.shields.io/badge/JavaScript-0d1117?style=for-the-badge&logo=javascript&logoColor=C9A84C)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![Go](https://img.shields.io/badge/Go-0d1117?style=for-the-badge&logo=go&logoColor=C9A84C)](https://go.dev)
+[![Rust](https://img.shields.io/badge/Rust-0d1117?style=for-the-badge&logo=rust&logoColor=C9A84C)](https://www.rust-lang.org)
+[![Java](https://img.shields.io/badge/Java-0d1117?style=for-the-badge&logo=openjdk&logoColor=C9A84C)](https://www.java.com/pt-BR)
+[![Kotlin](https://img.shields.io/badge/Kotlin-0d1117?style=for-the-badge&logo=kotlin&logoColor=C9A84C)](https://kotlinlang.org)
+[![C](https://img.shields.io/badge/C-0d1117?style=for-the-badge&logo=c&logoColor=C9A84C)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![C++](https://img.shields.io/badge/C++-0d1117?style=for-the-badge&logo=cplusplus&logoColor=C9A84C)](https://isocpp.org)
 
 <br>
 
@@ -77,12 +77,12 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br><br>
 
-![Docker](https://img.shields.io/badge/Docker-0d1117?style=for-the-badge&logo=docker&logoColor=C9A84C)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-0d1117?style=for-the-badge&logo=kubernetes&logoColor=C9A84C)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0d1117?style=for-the-badge&logo=postgresql&logoColor=C9A84C)
-![Redis](https://img.shields.io/badge/Redis-0d1117?style=for-the-badge&logo=redis&logoColor=C9A84C)
-![Linux](https://img.shields.io/badge/Linux-0d1117?style=for-the-badge&logo=linux&logoColor=C9A84C)
-![Git](https://img.shields.io/badge/Git-0d1117?style=for-the-badge&logo=git&logoColor=C9A84C)
+[![Docker](https://img.shields.io/badge/Docker%20·%20Containers-0d1117?style=for-the-badge&logo=docker&logoColor=C9A84C)](https://www.docker.com)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes%20·%20Orquestração-0d1117?style=for-the-badge&logo=kubernetes&logoColor=C9A84C)](https://kubernetes.io)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL%20·%20Banco%20de%20Dados-0d1117?style=for-the-badge&logo=postgresql&logoColor=C9A84C)](https://www.postgresql.org)
+[![Redis](https://img.shields.io/badge/Redis%20·%20Cache%20&%20Filas-0d1117?style=for-the-badge&logo=redis&logoColor=C9A84C)](https://redis.io)
+[![Linux](https://img.shields.io/badge/Linux%20·%20Sistemas%20Operacionais-0d1117?style=for-the-badge&logo=linux&logoColor=C9A84C)](https://www.linux.org)
+[![Git](https://img.shields.io/badge/Git%20·%20Controle%20de%20Versão-0d1117?style=for-the-badge&logo=git&logoColor=C9A84C)](https://git-scm.com)
 
 <br>
 
@@ -90,10 +90,10 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br><br>
 
-![TOTVS](https://img.shields.io/badge/TOTVS-0d1117?style=for-the-badge&logoColor=C9A84C)
-![Omie](https://img.shields.io/badge/Omie-0d1117?style=for-the-badge&logoColor=C9A84C)
-![Domínio](https://img.shields.io/badge/Dom%C3%ADnio-0d1117?style=for-the-badge&logoColor=C9A84C)
-![Questor](https://img.shields.io/badge/Questor-0d1117?style=for-the-badge&logoColor=C9A84C)
+[![TOTVS](https://img.shields.io/badge/TOTVS%20·%20ERP%20Empresarial-0d1117?style=for-the-badge&logoColor=C9A84C)](https://www.totvs.com)
+[![Omie](https://img.shields.io/badge/Omie%20·%20Gestão%20Financeira-0d1117?style=for-the-badge&logoColor=C9A84C)](https://www.omie.com.br)
+[![Domínio](https://img.shields.io/badge/Dom%C3%ADnio%20·%20Contabilidade-0d1117?style=for-the-badge&logoColor=C9A84C)](https://www.dominioatendimento.com)
+[![Questor](https://img.shields.io/badge/Questor%20·%20Fiscal%20&%20Cont%C3%A1bil-0d1117?style=for-the-badge&logoColor=C9A84C)](https://www.questor.com.br)
 
 </div>
 
@@ -137,9 +137,9 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=C9A84C)](https://www.linkedin.com/in/luanguilhermelourenco)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn%20·%20Luan%20Guilherme%20Louren%C3%A7o-0d1117?style=for-the-badge&logo=linkedin&logoColor=C9A84C)](https://www.linkedin.com/in/luanguilhermelourenco)
 &nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=C9A84C)](https://github.com/euguilouren)
+[![GitHub](https://img.shields.io/badge/GitHub%20·%20euguilouren-0d1117?style=for-the-badge&logo=github&logoColor=C9A84C)](https://github.com/euguilouren)
 
 </div>
 
