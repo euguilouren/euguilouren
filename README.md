@@ -16,11 +16,11 @@
 
 <br>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                    PERFIL PROFISSIONAL                       ║
-╚══════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━%20✦%20PERFIL%20PROFISSIONAL%20✦━━━━━━━━━━━━━━━━━━-0d1117?style=for-the-badge&labelColor=0d1117&color=C9A84C" />
+</div>
+
+<br>
 
 Profissional com dupla formação em **Engenharia de Software** e **Ciências Contábeis**, atuando na intersecção entre tecnologia e processos de negócio. Experiência consolidada na gestão e otimização de sistemas **ERP/CRM** — Omie, Domínio, TOTVS e Questor — automação de rotinas contábeis e fiscais, e entrega de **compliance regulatório** (ECD/ECF).
 
@@ -28,15 +28,15 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                    DOMÍNIOS DE EXPERTISE                     ║
-╚══════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━%20✦%20DOMÍNIOS%20DE%20EXPERTISE%20✦━━━━━━━━━━━━━━━━━━-0d1117?style=for-the-badge&labelColor=0d1117&color=C9A84C" />
+</div>
+
+<br>
 
 <div align="center">
 
-| &nbsp;&nbsp;💻 &nbsp;Tecnologia & Engenharia&nbsp;&nbsp; | &nbsp;&nbsp;📊&nbsp; Negócio & Contabilidade&nbsp;&nbsp; |
+| &nbsp;💻&nbsp; Tecnologia & Engenharia | &nbsp;📊&nbsp; Negócio & Contabilidade |
 |:--|:--|
 | Arquitetura Backend & APIs | Gestão ERP/CRM (TOTVS, Omie, Domínio, Questor) |
 | Sistemas Distribuídos | Escrituração Contábil Digital (ECD / ECF) |
@@ -49,15 +49,17 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                       STACK TÉCNICO                          ║
-╚══════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━%20✦%20STACK%20TÉCNICO%20✦━━━━━━━━━━━━━━━━━━━━-0d1117?style=for-the-badge&labelColor=0d1117&color=C9A84C" />
+</div>
+
+<br>
 
 <div align="center">
 
-**· Linguagens ·**
+<img src="https://img.shields.io/badge/·%20Linguagens%20·-0d1117?style=flat-square&labelColor=0d1117&color=C9A84C" />
+
+<br><br>
 
 ![Python](https://img.shields.io/badge/Python-0d1117?style=for-the-badge&logo=python&logoColor=C9A84C)
 ![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=C9A84C)
@@ -69,7 +71,11 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 ![C](https://img.shields.io/badge/C-0d1117?style=for-the-badge&logo=c&logoColor=C9A84C)
 ![C++](https://img.shields.io/badge/C++-0d1117?style=for-the-badge&logo=cplusplus&logoColor=C9A84C)
 
-**· Infraestrutura ·**
+<br>
+
+<img src="https://img.shields.io/badge/·%20Infraestrutura%20·-0d1117?style=flat-square&labelColor=0d1117&color=C9A84C" />
+
+<br><br>
 
 ![Docker](https://img.shields.io/badge/Docker-0d1117?style=for-the-badge&logo=docker&logoColor=C9A84C)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-0d1117?style=for-the-badge&logo=kubernetes&logoColor=C9A84C)
@@ -78,28 +84,32 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 ![Linux](https://img.shields.io/badge/Linux-0d1117?style=for-the-badge&logo=linux&logoColor=C9A84C)
 ![Git](https://img.shields.io/badge/Git-0d1117?style=for-the-badge&logo=git&logoColor=C9A84C)
 
-**· Sistemas ERP / CRM ·**
+<br>
 
-![TOTVS](https://img.shields.io/badge/TOTVS-0d1117?style=for-the-badge&logoColor=C9A84C&color=0d1117)
-![Omie](https://img.shields.io/badge/Omie-0d1117?style=for-the-badge&logoColor=C9A84C&color=0d1117)
-![Domínio](https://img.shields.io/badge/Dom%C3%ADnio-0d1117?style=for-the-badge&logoColor=C9A84C&color=0d1117)
-![Questor](https://img.shields.io/badge/Questor-0d1117?style=for-the-badge&logoColor=C9A84C&color=0d1117)
+<img src="https://img.shields.io/badge/·%20Sistemas%20ERP%20%2F%20CRM%20·-0d1117?style=flat-square&labelColor=0d1117&color=C9A84C" />
+
+<br><br>
+
+![TOTVS](https://img.shields.io/badge/TOTVS-0d1117?style=for-the-badge&logoColor=C9A84C)
+![Omie](https://img.shields.io/badge/Omie-0d1117?style=for-the-badge&logoColor=C9A84C)
+![Domínio](https://img.shields.io/badge/Dom%C3%ADnio-0d1117?style=for-the-badge&logoColor=C9A84C)
+![Questor](https://img.shields.io/badge/Questor-0d1117?style=for-the-badge&logoColor=C9A84C)
 
 </div>
 
 <br>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                    ESTATÍSTICAS GITHUB                       ║
-╚══════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━%20✦%20ESTATÍSTICAS%20✦━━━━━━━━━━━━━━━━━━-0d1117?style=for-the-badge&labelColor=0d1117&color=C9A84C" />
+</div>
+
+<br>
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=euguilouren&show_icons=true&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&locale=pt-br&title_color=C9A84C&icon_color=C9A84C&ring_color=C9A84C" />
+<img height="175" src="https://github-readme-stats.vercel.app/api?username=euguilouren&show_icons=true&theme=midnight-purple&hide_border=true&include_all_commits=true&count_private=true&locale=pt-br&title_color=C9A84C&icon_color=C9A84C" />
 &nbsp;
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=euguilouren&layout=compact&theme=midnight-purple&hide_border=true&langs_count=8&locale=pt-br&title_color=C9A84C" />
+<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=euguilouren&layout=compact&theme=midnight-purple&hide_border=true&langs_count=8&locale=pt-br&title_color=C9A84C" />
 
 <br>
 
@@ -107,23 +117,25 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br>
 
-<img src="https://github-profile-trophy.vercel.app/?username=euguilouren&theme=darkhub&no-frame=true&margin-w=8&column=6&title_color=C9A84C" />
+<img src="https://github-profile-trophy.vercel.app/?username=euguilouren&theme=darkhub&no-frame=true&margin-w=8&column=6" />
 
 </div>
 
 <br>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                          CONTATO                             ║
-╚══════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━%20✦%20CONTATO%20✦━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=for-the-badge&labelColor=0d1117&color=C9A84C" />
+</div>
+
+<br>
 
 <div align="center">
 
 [![Gmail](https://img.shields.io/badge/euguilouren%40gmail.com-0d1117?style=for-the-badge&logo=gmail&logoColor=C9A84C)](mailto:euguilouren@gmail.com)
 &nbsp;
 [![WhatsApp](https://img.shields.io/badge/(61)%209%208212--4391-0d1117?style=for-the-badge&logo=whatsapp&logoColor=C9A84C)](https://wa.me/5561982124391)
+
+<br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=C9A84C)](https://www.linkedin.com/in/luanguilhermelourenco)
 &nbsp;
