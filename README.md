@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Luan%20Louren%C3%A7o&fontSize=56&fontColor=C9A84C&fontAlignY=40&animation=fadeIn&desc=Engenharia%20de%20Software%20%7C%20Ci%C3%AAncias%20Cont%C3%A1beis&descAlignY=60&descColor=ffffff&descSize=17" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=220&section=header&text=Luan%20Louren%C3%A7o&fontSize=56&fontColor=C9A84C&fontAlignY=40&animation=fadeIn&desc=Engenharia%20de%20Software%20%7C%20Ci%C3%AAncias%20Cont%C3%A1beis&descAlignY=60&descColor=888888&descSize=17" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=16&pause=1500&color=C9A84C&center=true&vCenter=true&width=600&lines=Tecnologia+que+entende+de+neg%C3%B3cio.;Neg%C3%B3cio+que+fala+a+linguagem+da+tecnologia.;ERP+%7C+CRM+%7C+Compliance+%7C+Backend;TOTVS+%C2%B7+Omie+%C2%B7+Dom%C3%ADnio+%C2%B7+Questor;Bras%C3%ADlia%2C+Brasil)](https://git.io/typing-svg)
 
@@ -145,7 +145,7 @@ Alia raciocínio analítico e lógica de programação para arquitetar soluçõe
 
 <br>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&animation=fadeIn" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=120&section=footer&animation=fadeIn" />
 
 <div align="center">
 <sub>« A intersecção entre tecnologia e negócio é onde o valor real é criado. »</sub>
