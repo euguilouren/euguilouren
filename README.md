@@ -1,20 +1,14 @@
-<div align="center">
+# Olá, eu sou o Luan Lourenço 👋
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=180&section=header&text=Luan%20Louren%C3%A7o&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Engenheiro%20de%20Software%20%7C%20Backend%20%26%20Sistemas%20Distribu%C3%ADdos&descAlignY=58&descSize=16" />
+**Engenheiro de Software · Backend · Sistemas Distribuídos**
 
-<img src="https://komarev.com/ghpvc/?username=euguilouren&label=Visualizações+do+Perfil&color=58a6ff&style=flat" />
-
-![Aberto a Colaborar](https://img.shields.io/badge/Aberto_a-Colaborar-3fb950?style=flat&logo=github)
-![Foco](https://img.shields.io/badge/Foco-Backend_%7C_Sistemas_Distribuídos-58a6ff?style=flat)
-![Brasil](https://img.shields.io/badge/Baseado_no-Brasil-009c3b?style=flat)
-
-</div>
+Brasília, Brasil 🇧🇷
 
 ---
 
 ## 🧑‍💻 Sobre Mim
 
-Engenheiro de software focado em **sistemas distribuídos, arquitetura backend** e aplicações de alta performance.
+Focado em **sistemas distribuídos, arquitetura backend** e aplicações de alta performance.
 Construo sistemas que precisam funcionar às 3AM com o dobro da carga.
 
 Atualmente mergulhado em **Rust + Go para infraestrutura**, Python/TypeScript para tudo mais.
@@ -54,21 +48,15 @@ Corretude primeiro, clareza depois, eficiência em terceiro.
   <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=euguilouren&layout=compact&theme=github_dark&hide_border=true&langs_count=8&locale=pt-br" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=euguilouren&theme=github-dark-blue&hide_border=true&locale=pt_BR" />
-</div>
-
 ---
 
 ## 📫 Contato
-
-<div align="center">
 
 [![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:euguilouren@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5561982124391)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luanguilhermelourenco)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/euguilouren)
 
-</div>
+---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer" />
+> ⚡ *"Corretude não é negociável. Todo o resto é trade-off."*
