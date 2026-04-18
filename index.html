@@ -254,6 +254,202 @@
     .eye { width: 12vw; height: 3.5vw; }
     .eye-pair { gap: 8vw; top: 36%; }
   }
+
+  /* ── HAMBURGER MOBILE MENU ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all .3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,8,16,0.97);
+    backdrop-filter: blur(20px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--white); text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color .2s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: menuReveal .4s ease forwards;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu a:nth-child(1) { animation-delay: .05s; }
+  .mobile-menu a:nth-child(2) { animation-delay: .10s; }
+  .mobile-menu a:nth-child(3) { animation-delay: .15s; }
+  .mobile-menu a:nth-child(4) { animation-delay: .20s; }
+  .mobile-menu a:nth-child(5) { animation-delay: .25s; }
+  .mobile-menu-gold { color: var(--gold) !important; font-size: 14px !important; letter-spacing: 2px; text-transform: uppercase; }
+
+  @keyframes menuReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width:768px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none !important; }
+  }
+
+  /* ── ELABORATE REVEAL ANIMATIONS ── */
+  .reveal-left {
+    opacity: 0; transform: translateX(-50px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+  .reveal-right {
+    opacity: 0; transform: translateX(50px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  .reveal-scale {
+    opacity: 0; transform: scale(0.88);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.34,1.56,.64,1);
+  }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  .stagger-child {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.16,1,.3,1);
+  }
+  .stagger-child.visible { opacity: 1; transform: translateY(0); }
+
+  /* section counters for stagger */
+  .stagger-wrap .stagger-child:nth-child(1) { transition-delay: .0s; }
+  .stagger-wrap .stagger-child:nth-child(2) { transition-delay: .08s; }
+  .stagger-wrap .stagger-child:nth-child(3) { transition-delay: .16s; }
+  .stagger-wrap .stagger-child:nth-child(4) { transition-delay: .24s; }
+
+  /* ── EXPERIENCE SECTION ── */
+  .timeline { position: relative; padding-left: 32px; margin-top: 40px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 48px;
+    opacity: 0; transform: translateX(-20px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .timeline-item.visible { opacity: 1; transform: translateX(0); }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -38px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201,168,76,0.5);
+  }
+  .tl-period {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .tl-role {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px; font-weight: 700; color: var(--white);
+    margin-bottom: 2px;
+  }
+  .tl-company {
+    font-size: 13px; color: var(--muted); margin-bottom: 12px;
+  }
+  .tl-tasks { list-style: none; padding: 0; }
+  .tl-tasks li {
+    font-size: 13px; color: var(--text); line-height: 1.6;
+    padding: 4px 0 4px 16px; position: relative;
+  }
+  .tl-tasks li::before {
+    content: '›'; position: absolute; left: 0;
+    color: var(--gold); font-size: 16px;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex; align-items: flex-start; gap: 14px;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.16,1,.3,1), border-color .2s, box-shadow .2s;
+  }
+  .cert-card.visible { opacity: 1; transform: translateY(0); }
+  .cert-card:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .cert-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .cert-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; font-weight: 700; color: var(--white);
+    margin-bottom: 2px;
+  }
+  .cert-issuer { font-size: 12px; color: var(--gold); margin-bottom: 2px; }
+  .cert-year { font-size: 11px; color: var(--muted); }
+
+  /* ── PROJECTS SECTION ── */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .proj-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-decoration: none;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .2s, box-shadow .2s;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.16,1,.3,1), border-color .2s, box-shadow .2s;
+  }
+  .proj-card.visible { opacity: 1; transform: translateY(0); }
+  .proj-card:hover { border-color: var(--blue,#58a6ff); box-shadow: 0 16px 32px rgba(0,0,0,0.4); transform: translateY(-6px); }
+  .proj-header { display: flex; align-items: center; gap: 10px; }
+  .proj-icon { font-size: 22px; }
+  .proj-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px; font-weight: 700; color: #58a6ff;
+  }
+  .proj-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .proj-meta { display: flex; gap: 14px; font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .lang-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
 </style>
 </head>
 <body>
@@ -286,7 +482,20 @@
     <li><a href="#erp">ERP / CRM</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#linguagens" onclick="closeMobile()">Linguagens</a>
+  <a href="#infraestrutura" onclick="closeMobile()">Infraestrutura</a>
+  <a href="#erp" onclick="closeMobile()">ERP / CRM</a>
+  <a href="#experiencia" onclick="closeMobile()">Experiência</a>
+  <a href="#contato" onclick="closeMobile()">Contato</a>
+  <a href="#" class="mobile-menu-gold" onclick="closeMobile()">✕ fechar</a>
+</div>
 
 <div id="hero">
   <div class="hero-tag">Brasília, Brasil · Software Engineer</div>
@@ -379,6 +588,119 @@
   </div></div>
 </div>
 
+
+<!-- EXPERIENCE -->
+<section id="experiencia">
+  <span class="section-tag reveal-left">06 · Carreira</span>
+  <h2 class="section-title reveal-left">Experiência Profissional</h2>
+  <div class="gold-line" style="margin:12px 0 0"></div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="tl-period">2022 — Presente</div>
+      <div class="tl-role">Analista de Sistemas & Processos</div>
+      <div class="tl-company">Empresa Atual · Brasília, DF</div>
+      <ul class="tl-tasks">
+        <li>Gestão e otimização de sistemas ERP (TOTVS, Omie, Domínio, Questor)</li>
+        <li>Automação de rotinas contábeis e fiscais com Python e integração de APIs</li>
+        <li>Entrega de compliance regulatório: ECD, ECF e obrigações acessórias</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-period">2019 — 2022</div>
+      <div class="tl-role">Analista Contábil & Fiscal</div>
+      <div class="tl-company">Escritório de Contabilidade · Brasília, DF</div>
+      <ul class="tl-tasks">
+        <li>Escrituração contábil digital (ECD/ECF) para carteira de clientes PMEs</li>
+        <li>Implementação e configuração de sistemas ERP para novos clientes</li>
+        <li>Controladoria, análise financeira e relatórios gerenciais</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-top:24px;font-style:italic">
+    ✏️ Dados de exemplo — me envie sua experiência real para atualizar
+  </p>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certificacoes">
+  <span class="section-tag reveal-left">07 · Formação</span>
+  <h2 class="section-title reveal-left">Certificações</h2>
+  <div class="gold-line" style="margin:12px 0 0"></div>
+  <div class="cert-grid stagger-wrap">
+
+    <div class="cert-card stagger-child">
+      <div class="cert-icon">🎓</div>
+      <div>
+        <div class="cert-name">Engenharia de Software</div>
+        <div class="cert-issuer">Bacharelado</div>
+        <div class="cert-year">Formação Universitária</div>
+      </div>
+    </div>
+
+    <div class="cert-card stagger-child">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">Ciências Contábeis</div>
+        <div class="cert-issuer">Bacharelado</div>
+        <div class="cert-year">Formação Universitária</div>
+      </div>
+    </div>
+
+    <div class="cert-card stagger-child">
+      <div class="cert-icon">🐍</div>
+      <div>
+        <div class="cert-name">Python para Automação</div>
+        <div class="cert-issuer">Adicione sua certificação</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+
+    <div class="cert-card stagger-child">
+      <div class="cert-icon">☁️</div>
+      <div>
+        <div class="cert-name">Cloud & DevOps</div>
+        <div class="cert-issuer">Adicione sua certificação</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-top:24px;font-style:italic">
+    ✏️ Dados de exemplo — me envie suas certificações reais para atualizar
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projetos">
+  <span class="section-tag reveal-left">08 · Projetos</span>
+  <h2 class="section-title reveal-left">Projetos no GitHub</h2>
+  <div class="gold-line" style="margin:12px 0 0"></div>
+  <div class="proj-grid stagger-wrap">
+
+    <a href="https://github.com/euguilouren/Projetobetafloraisville" target="_blank" class="proj-card stagger-child">
+      <div class="proj-header">
+        <span class="proj-icon">🌿</span>
+        <div class="proj-name">Projetobetafloraisville</div>
+      </div>
+      <div class="proj-desc">Projeto disponível no repositório público. Clique para ver detalhes e código-fonte.</div>
+      <div class="proj-meta">
+        <span><span class="lang-dot" style="background:#3776AB"></span>Python</span>
+        <span>📁 Repositório público</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/euguilouren" target="_blank" class="proj-card stagger-child" style="border-style:dashed;justify-content:center;align-items:center;text-align:center;min-height:160px">
+      <div style="font-size:32px;margin-bottom:8px">+</div>
+      <div class="proj-name" style="color:var(--muted)">Mais projetos em breve</div>
+      <div class="proj-desc" style="margin-top:4px">Me envie os nomes dos repositórios para adicionar</div>
+    </a>
+
+  </div>
+</section>
+
 <section id="contato" class="reveal">
   <span class="section-tag">05 · Contato</span>
   <h2 class="section-title">Vamos conversar?</h2>
@@ -464,6 +786,54 @@ document.querySelectorAll('.card-track').forEach(t => {
     if(Math.abs(e.deltaX) < Math.abs(e.deltaY)) { e.preventDefault(); t.scrollLeft += e.deltaY * 0.8; }
   }, {passive:false});
 });
+
+// ── HAMBURGER MENU ──
+const ham = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+  ham.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── ELABORATE OBSERVERS ──
+const obsOpts = { threshold: 0.12 };
+const makeObs = (selector) => new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, obsOpts);
+
+const obsL = makeObs('.reveal-left');
+const obsR = makeObs('.reveal-right');
+const obsSc = makeObs('.reveal-scale');
+const obsTl = makeObs('.timeline-item');
+
+document.querySelectorAll('.reveal-left').forEach(el => obsL.observe(el));
+document.querySelectorAll('.reveal-right').forEach(el => obsR.observe(el));
+document.querySelectorAll('.reveal-scale').forEach(el => obsSc.observe(el));
+document.querySelectorAll('.timeline-item').forEach(el => obsTl.observe(el));
+
+// Stagger children
+const staggerObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stagger-child').forEach((child, i) => {
+        setTimeout(() => child.classList.add('visible'), i * 90);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.stagger-wrap').forEach(el => staggerObs.observe(el));
+
+// Cert + proj cards individual observer
+const cardObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.cert-card:not(.stagger-child), .proj-card:not(.stagger-child)').forEach(el => cardObs.observe(el));
 </script>
 </body>
 </html>
