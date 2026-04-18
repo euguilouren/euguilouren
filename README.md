@@ -1,11 +1,11 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=26&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=620&lines=Ol%C3%A1%2C+eu+sou+o+Luan+%F0%9F%91%8B;Engenheiro+de+Software;Sistemas+Distribu%C3%ADdos+%7C+Backend;Rust+%C2%B7+Go+%C2%B7+Python+%C2%B7+TypeScript;Sempre+construindo+%E2%9A%A1)](https://git.io/typing-svg)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=180&section=header&text=Luan%20Louren%C3%A7o&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Engenheiro%20de%20Software%20%7C%20Backend%20%26%20Sistemas%20Distribu%C3%ADdos&descAlignY=58&descSize=16" />
 
-<img src="https://komarev.com/ghpvc/?username=euguilouren&label=Visualiza%C3%A7%C3%B5es+do+Perfil&color=58a6ff&style=flat" />
+<img src="https://komarev.com/ghpvc/?username=euguilouren&label=Visualizações+do+Perfil&color=58a6ff&style=flat" />
 
 ![Aberto a Colaborar](https://img.shields.io/badge/Aberto_a-Colaborar-3fb950?style=flat&logo=github)
-![Foco](https://img.shields.io/badge/Foco-Backend_%7C_Sistemas_Distribu%C3%ADdos-58a6ff?style=flat)
+![Foco](https://img.shields.io/badge/Foco-Backend_%7C_Sistemas_Distribuídos-58a6ff?style=flat)
 ![Brasil](https://img.shields.io/badge/Baseado_no-Brasil-009c3b?style=flat)
 
 </div>
@@ -71,8 +71,4 @@ Corretude primeiro, clareza depois, eficiência em terceiro.
 
 </div>
 
----
-
-<div align="center">
-  <em>⚡ "Corretude não é negociável. Todo o resto é trade-off."</em>
-</div>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer" />
