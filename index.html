@@ -745,11 +745,12 @@
   /* Mobile: static inside hero, centered */
   .arrow-mobile {
     display: none;
-    flex-direction: column; align-items: center; gap: 4px;
+    flex-direction: column; align-items: center; justify-content: center; gap: 4px;
     color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
     animation: bounceDown 1.8s ease-in-out infinite;
     cursor: pointer; white-space: nowrap;
     margin-top: 24px; padding-bottom: 16px;
+    width: 100%; text-align: center;
   }
   @media(max-width:768px) { .arrow-mobile { display: flex; } }
 
