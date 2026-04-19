@@ -495,28 +495,64 @@
   /* ── SCROLL INDICATORS ── */
   .swipe-hint { display: none; } /* hidden — replaced by corner arrow */
 
-  /* Corner pulsing arrow */
+  /* ── DRAMATIC PULSING CORNER ARROW ── */
   .corner-swipe {
     position: absolute;
-    bottom: 18px; right: 20px;
+    bottom: 16px; right: 16px;
     z-index: 10;
-    display: flex; align-items: center; gap: 0;
+    display: flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px;
     pointer-events: none;
   }
-  .corner-arrow {
-    display: flex; align-items: center;
-    animation: arrowPulse 1.4s ease-in-out infinite;
+
+  /* Ripple rings */
+  .corner-swipe::before,
+  .corner-swipe::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    animation: rippleOut 2s ease-out infinite;
   }
-  .corner-arrow:nth-child(2) { animation-delay: .18s; }
-  .corner-arrow:nth-child(3) { animation-delay: .36s; }
-  .corner-arrow svg {
-    width: 22px; height: 22px;
+  .corner-swipe::after { animation-delay: 1s; }
+
+  @keyframes rippleOut {
+    0%   { transform: scale(0.6); opacity: 0.9; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  /* Glowing circle background */
+  .corner-pulse-bg {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.35) 0%, rgba(201,168,76,0.08) 70%);
+    animation: bgPulse 1.2s ease-in-out infinite;
+  }
+  @keyframes bgPulse {
+    0%,100% { transform: scale(1);    opacity: 0.7; }
+    50%      { transform: scale(1.15); opacity: 1; }
+  }
+
+  /* The three chevrons stacked */
+  .corner-chevrons {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; gap: -2px;
+  }
+  .corner-chevrons svg {
+    width: 14px; height: 14px;
     color: var(--gold);
-    filter: drop-shadow(0 0 6px rgba(201,168,76,0.7));
+    filter: drop-shadow(0 0 5px rgba(201,168,76,1));
+    animation: chevronFlash 1.2s ease-in-out infinite;
   }
-  @keyframes arrowPulse {
-    0%,100% { opacity: 0.2; transform: translateX(0); }
-    50%      { opacity: 1;   transform: translateX(5px); }
+  .corner-chevrons svg:nth-child(1) { animation-delay: 0s;    opacity: 0.4; }
+  .corner-chevrons svg:nth-child(2) { animation-delay: .18s;  opacity: 0.7; }
+  .corner-chevrons svg:nth-child(3) { animation-delay: .36s;  opacity: 1; }
+
+  @keyframes chevronFlash {
+    0%,100% { opacity: 0.2; transform: translateX(-2px); filter: drop-shadow(0 0 2px rgba(201,168,76,0.4)); }
+    50%      { opacity: 1;   transform: translateX(3px);  filter: drop-shadow(0 0 8px rgba(201,168,76,1)); }
   }
 
   /* Vertical scroll arrow at bottom of hero */
@@ -669,7 +705,7 @@
 
 <div id="hero">
   <div class="hero-tag">Brasília, Brasil · Software Engineer</div>
-  <h1 class="hero-name">Luan<br><span>Lourenço</span></h1>
+  <h1 class="hero-name">Luan Guilherme<br><span>Lourenço</span></h1>
   <p class="hero-subtitle">Automação Contábil &nbsp;·&nbsp; ERP/CRM &nbsp;·&nbsp; Compliance Regulatório</p>
   <div class="hero-badges">
     <span class="hero-badge">Backend & APIs</span>
@@ -720,9 +756,12 @@
   </div>
   <div style="position:relative">
   <div class="corner-swipe">
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+    <div class="corner-pulse-bg"></div>
+    <div class="corner-chevrons">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
   </div>
   <div class="card-track-wrap" style="position:relative">
   <div class="swipe-hint">
@@ -757,9 +796,12 @@
   </div>
   <div style="position:relative">
   <div class="corner-swipe">
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+    <div class="corner-pulse-bg"></div>
+    <div class="corner-chevrons">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
   </div>
   <div class="card-track-wrap" style="position:relative">
   <div class="swipe-hint">
@@ -792,9 +834,12 @@
   </div>
   <div style="position:relative">
   <div class="corner-swipe">
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-    <div class="corner-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+    <div class="corner-pulse-bg"></div>
+    <div class="corner-chevrons">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
   </div>
   <div class="card-track-wrap" style="position:relative">
   <div class="swipe-hint">
@@ -821,7 +866,7 @@
 <!-- BIOGRAPHY -->
 <section id="bio" style="padding-bottom:0">
   <span class="section-tag reveal-left">✦ Posicionamento</span>
-  <h2 class="section-title reveal-left">Biografia de Impacto</h2>
+  <h2 class="section-title reveal-left">Biografia</h2>
   <div class="gold-line" style="margin:12px 0 0"></div>
   <div class="bio-section reveal">
     <div class="bio-divider"></div>
