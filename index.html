@@ -491,6 +491,112 @@
   .proj-meta { display: flex; gap: 14px; font-size: 11px; color: var(--muted); margin-top: 4px; }
   .lang-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
 
+
+  /* ── SCROLL INDICATORS ── */
+  .swipe-hint {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: var(--gold); letter-spacing: 1px;
+    text-transform: uppercase; margin: 12px 0 0;
+    animation: pulseHint 2s ease-in-out infinite;
+  }
+  .swipe-hint svg { flex-shrink: 0; }
+  @keyframes pulseHint {
+    0%,100% { opacity: 0.5; transform: translateX(0); }
+    50%      { opacity: 1;   transform: translateX(6px); }
+  }
+
+  /* Vertical scroll arrow at bottom of hero */
+  .scroll-down-arrow {
+    position: absolute; bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    animation: bounceDown 1.8s ease-in-out infinite;
+    cursor: pointer;
+  }
+  .scroll-down-arrow svg { opacity: 0.8; }
+  @keyframes bounceDown {
+    0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50%      { transform: translateX(-50%) translateY(8px); opacity: 1; }
+  }
+
+  /* Side arrows on card tracks */
+  .track-container {
+    position: relative;
+  }
+  .track-arrow {
+    position: absolute; top: 50%; z-index: 5;
+    transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--gold);
+    transition: background .2s, transform .2s;
+    pointer-events: all;
+  }
+  .track-arrow:hover { background: rgba(201,168,76,0.3); transform: translateY(-50%) scale(1.1); }
+  .track-arrow.left  { left: 12px; }
+  .track-arrow.right { right: 12px; }
+  .track-arrow svg { width: 16px; height: 16px; }
+
+  /* ── BIGGER CARDS ── */
+  .lang-card   { flex: 0 0 210px; padding: 32px 22px 28px; gap: 13px; }
+  .lang-icon   { width: 60px; height: 60px; border-radius: 16px; font-size: 34px; }
+  .lang-icon img { width: 36px; height: 36px; }
+  .lang-name   { font-size: 16px; }
+  .lang-desc   { font-size: 12px; }
+
+  .infra-card  { flex: 0 0 260px; padding: 26px; }
+  .infra-icon  { width: 50px; height: 50px; border-radius: 12px; font-size: 26px; }
+  .infra-icon img { width: 30px; height: 30px; }
+  .infra-name  { font-size: 16px; }
+  .infra-desc  { font-size: 13px; }
+
+  .erp-card    { flex: 0 0 290px; padding: 32px 26px; gap: 16px; }
+  .erp-logo-wrap { width: 64px; height: 64px; border-radius: 16px; }
+  .erp-logo-wrap img { width: 52px; height: 52px; }
+  .erp-logo-svg  { width: 64px; height: 64px; border-radius: 16px; }
+  .erp-logo-svg svg { width: 40px; height: 40px; }
+  .erp-name    { font-size: 20px; }
+  .erp-desc    { font-size: 13px; }
+
+  /* ── IMPACT BIOGRAPHY ── */
+  .bio-section {
+    background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 20px;
+    padding: 40px 44px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bio-section::before {
+    content: '"';
+    position: absolute; top: -20px; left: 24px;
+    font-size: 160px; color: var(--gold); opacity: 0.07;
+    font-family: Georgia, serif; line-height: 1;
+    pointer-events: none;
+  }
+  .bio-text {
+    font-size: 17px; line-height: 1.85;
+    color: var(--white); font-weight: 400;
+    position: relative; z-index: 1;
+  }
+  .bio-text strong { color: var(--gold); font-weight: 600; }
+  .bio-text em { color: var(--muted); font-style: normal; font-size: 14px; display: block; margin-top: 20px; }
+  .bio-divider {
+    width: 48px; height: 3px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 20px 0;
+  }
+
+  @media(max-width:768px) {
+    .bio-section { padding: 28px 24px; }
+    .bio-text { font-size: 15px; }
+    .track-arrow { display: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -554,7 +660,10 @@
     <a href="#contato" class="btn btn-primary">✦ Entrar em Contato</a>
     <a href="https://github.com/euguilouren" target="_blank" class="btn btn-outline">⌥ GitHub</a>
   </div>
-  <div class="scroll-indicator">↓ scroll</div>
+  <div class="scroll-down-arrow" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    scroll
+  </div>
 </div>
 
 <section id="sobre" class="reveal">
@@ -582,7 +691,10 @@
     <h2 class="section-title">Linguagens</h2>
     <div class="gold-line" style="margin:12px 0"></div>
     <p class="section-desc">Cada linguagem com seu ecossistema, idioms e casos de uso reais.</p>
-    <div class="scroll-hint"><span class="scroll-hint-arrow">→</span> deslize para ver mais</div>
+    <div class="swipe-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      deslize para ver mais
+    </div>
   </div>
   <div class="card-track-wrap"><div class="card-track">
     <a href="https://www.python.org" target="_blank" class="lang-card" style="--card-color:#3776AB;--card-glow:rgba(55,118,171,0.25)"><div class="lang-icon"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" onerror="this.parentNode.innerHTML='🐍'"></div><div class="lang-name">Python</div><div class="lang-desc">Automação, dados, backend e scripting</div><span class="lang-tag">Backend · Data</span></a>
@@ -602,7 +714,10 @@
     <span class="section-tag">03 · Infraestrutura</span>
     <h2 class="section-title">Ferramentas & Plataformas</h2>
     <div class="gold-line" style="margin:12px 0"></div>
-    <div class="scroll-hint"><span class="scroll-hint-arrow">→</span> deslize para ver mais</div>
+    <div class="swipe-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      deslize para ver mais
+    </div>
   </div>
   <div class="card-track-wrap"><div class="card-track">
     <a href="https://www.docker.com" target="_blank" class="infra-card" style="--card-color:#2496ED"><div class="infra-top"><div class="infra-icon"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker"></div><div><div class="infra-name">Docker</div><div class="infra-role">Containers</div></div></div><div class="infra-desc">Empacotamento e isolamento de aplicações em containers reproduzíveis.</div></a>
@@ -620,7 +735,10 @@
     <h2 class="section-title">ERP & CRM</h2>
     <div class="gold-line" style="margin:12px 0"></div>
     <p class="section-desc">Experiência consolidada nos principais sistemas de gestão empresarial do mercado brasileiro.</p>
-    <div class="scroll-hint"><span class="scroll-hint-arrow">→</span> deslize para ver mais</div>
+    <div class="swipe-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      deslize para ver mais
+    </div>
   </div>
   <div class="card-track-wrap"><div class="card-track">
     <a href="https://www.totvs.com" target="_blank" class="erp-card"><div class="erp-logo-svg"><svg fill="#C9A84C" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.385 0 0 5.339 0 12c0 6.614 5.385 12 12 12 6.614 0 12-5.386 12-12S18.614 0 12 0ZM8.648 3.813c1.275-.068 10.697 2.302 11.43 2.943.614.85.614 9.118 0 9.685-.284.095-2.127-.283-4.205-.755 0 2.031-.143 3.966-.426 4.203-.756.236-10.772-2.267-11.527-2.928-.615-.85-.615-9.119 0-9.686.283-.094 2.079.284 4.205.756 0-2.031.142-3.969.425-4.205a.448.448 0 0 1 .098-.013Zm-.523 4.265c-.048 2.362.095 4.961.425 5.434.426.378 4.158 1.418 7.276 2.174.047-2.41-.095-5.008-.426-5.481-.425-.378-4.157-1.418-7.275-2.127Z"/></svg></div><div class="erp-name">TOTVS</div><div class="erp-type">ERP Empresarial</div><div class="erp-desc">Gestão integrada de processos empresariais — o maior ERP da América Latina.</div></a>
@@ -631,6 +749,29 @@
 </div>
 
 
+
+
+<!-- BIOGRAPHY -->
+<section id="bio" style="padding-bottom:0">
+  <span class="section-tag reveal-left">✦ Posicionamento</span>
+  <h2 class="section-title reveal-left">Biografia de Impacto</h2>
+  <div class="gold-line" style="margin:12px 0 0"></div>
+  <div class="bio-section reveal">
+    <div class="bio-divider"></div>
+    <p class="bio-text">
+      Luan Guilherme Lourenço é um <strong>profissional de dupla competência</strong> — formado simultaneamente em Engenharia de Software e Ciências Contábeis pela Universidade Católica de Brasília. Em um mercado que raramente encontra quem domine os dois universos com profundidade real, Luan ocupa um espaço estratégico e único.
+    </p>
+    <br>
+    <p class="bio-text">
+      Sua especialidade é <strong>transformar a complexidade contábil e fiscal em eficiência automatizada</strong>. Com domínio técnico sobre os principais sistemas ERP do mercado brasileiro — TOTVS, Omie, Domínio e Questor — e capacidade de desenvolver soluções em Python e integração de APIs, ele entrega o que empresas e escritórios de contabilidade buscam: <strong>menos retrabalho, menos erro e mais resultado</strong>.
+    </p>
+    <br>
+    <p class="bio-text">
+      Baseado em <strong>Brasília, DF</strong>, Luan atua como a ponte entre o departamento contábil e o time de tecnologia. Enquanto outros profissionais precisam de um intermediário para traduzir requisitos técnicos em linguagem de negócio — ou vice-versa — <strong>Luan faz os dois</strong>. Essa capacidade de transitar entre mundos é o que o torna insubstituível onde atua.
+      <em>— Engenharia de Software · Ciências Contábeis · Automação · Compliance · Brasília, DF</em>
+    </p>
+  </div>
+</section>
 
 <!-- CERTIFICATIONS -->
 <section id="certificacoes">
@@ -748,6 +889,34 @@ setTimeout(scheduleBlink, 2000);
 document.querySelectorAll('.reveal').forEach(el =>
   new IntersectionObserver(([e]) => { if(e.isIntersecting) e.target.classList.add('visible'); }, {threshold:0.1}).observe(el)
 );
+
+
+// ── TRACK ARROW NAVIGATION ──
+document.querySelectorAll('.card-track').forEach((track, i) => {
+  track.id = 'track-' + i;
+  const wrap = track.parentElement;
+  wrap.style.position = 'relative';
+
+  const left = document.createElement('button');
+  left.className = 'track-arrow left';
+  left.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+  left.onclick = () => track.scrollBy({ left: -240, behavior: 'smooth' });
+
+  const right = document.createElement('button');
+  right.className = 'track-arrow right';
+  right.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  right.onclick = () => track.scrollBy({ left: 240, behavior: 'smooth' });
+
+  wrap.appendChild(left);
+  wrap.appendChild(right);
+
+  // Hide left arrow initially, show/hide based on scroll
+  left.style.display = 'none';
+  track.addEventListener('scroll', () => {
+    left.style.display  = track.scrollLeft > 20 ? 'flex' : 'none';
+    right.style.display = track.scrollLeft < track.scrollWidth - track.clientWidth - 20 ? 'flex' : 'none';
+  }, { passive: true });
+});
 
 // ── HORIZONTAL SCROLL ──
 document.querySelectorAll('.card-track').forEach(t => {
