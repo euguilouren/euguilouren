@@ -266,13 +266,50 @@
   .reveal.visible { opacity:1; transform:translateY(0); }
 
   @media(max-width:768px) {
+    /* Nav */
     nav { padding:14px 20px; }
     .nav-links { display:none; }
+    .hamburger { display: flex; }
+
+    /* Layout */
     .about-grid { grid-template-columns:1fr; }
     .scroll-section-header { padding:0 20px; }
     section { padding:60px 20px; }
+
+    /* Eyes */
     .eye { width: 12vw; height: 3.5vw; }
     .eye-pair { gap: 8vw; top: 36%; }
+
+    /* Hero spacing */
+    #hero { padding-top: 80px; padding-bottom: 40px; }
+    .hero-cta { margin-top: 24px; gap: 10px; }
+    .hero-badges { margin-top: 20px; gap: 8px; }
+
+    /* About stats — 2x2 on mobile */
+    .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .about-stat { padding: 18px 12px; }
+    .about-stat-val { font-size: 28px; }
+
+    /* Certifications — compact 2 columns */
+    .cert-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+    .cert-card { padding: 12px 14px; }
+    .cert-name { font-size: 12px; }
+    .cert-issuer { font-size: 11px; }
+    .cert-year { font-size: 10px; }
+
+    /* Swipe pill — smaller */
+    .corner-swipe { bottom: 12px; right: 12px; padding: 5px 10px 5px 8px; }
+    .swipe-hand { font-size: 13px; }
+    .swipe-label { font-size: 9px; letter-spacing: 1px; }
+    .swipe-dot { width: 4px; height: 4px; }
+    .swipe-dots { gap: 3px; }
+
+    /* Biography card */
+    .bio-section { padding: 28px 22px; }
+    .bio-text { font-size: 15px; line-height: 1.7; }
+
+    /* Track arrow hidden on mobile */
+    .track-arrow { display: none; }
   }
 
   /* ── HAMBURGER MOBILE MENU ── */
@@ -339,8 +376,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @media(max-width:768px) {
-  
   .btn-lang {
     font-family: var(--font); font-size: 11px; font-weight: 700;
     letter-spacing: 1.5px; color: var(--muted); text-decoration: none;
@@ -647,11 +682,7 @@
     margin: 20px 0;
   }
 
-  @media(max-width:768px) {
-    .bio-section { padding: 28px 24px; }
-    .bio-text { font-size: 15px; }
-    .track-arrow { display: none; }
-  }
+  
 
 
   .scroll-down-arrow .arrow-chevrons { display:flex;flex-direction:column;align-items:center;gap:3px; }
