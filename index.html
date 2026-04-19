@@ -171,6 +171,7 @@
   /* HERO ══════════════════════════════ */
   #hero {
     min-height: 100vh;
+    padding-bottom: 80px;
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; text-align: center;
     padding: 120px 24px 60px;
@@ -566,15 +567,16 @@
     50%      { transform: translateY(4px);  opacity: 1; filter: drop-shadow(0 0 8px rgba(201,168,76,1)); }
   }
   .scroll-down-arrow {
-    position: static;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 4px;
     color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
     animation: bounceDown 1.8s ease-in-out infinite;
     cursor: pointer;
-    margin-top: 32px;
-    align-self: center;
-    width: 100%;
-    text-align: center;
+    white-space: nowrap;
+    z-index: 20;
   }
   .scroll-down-arrow svg { opacity: 0.8; }
   @keyframes bounceDown {
