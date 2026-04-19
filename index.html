@@ -566,19 +566,6 @@
     0%,100% { transform: translateY(-3px); opacity: 0.2; }
     50%      { transform: translateY(4px);  opacity: 1; filter: drop-shadow(0 0 8px rgba(201,168,76,1)); }
   }
-  .scroll-down-arrow {
-    position: fixed;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    animation: bounceDown 1.8s ease-in-out infinite;
-    cursor: pointer;
-    white-space: nowrap;
-    z-index: 20;
-  }
-  .scroll-down-arrow svg { opacity: 0.8; }
   @keyframes bounceDown {
     0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
     50%      { transform: translateX(-50%) translateY(8px); opacity: 1; }
@@ -675,7 +662,6 @@
     .hero-cta { margin-top: 24px; gap: 10px; }
     .hero-badges { margin-top: 20px; gap: 8px; }
     .hero-subtitle { margin-top: 10px; }
-    .scroll-down-arrow { position: fixed; bottom: 32px; }
   }
   }
   }
@@ -740,6 +726,33 @@
     100% { transform: translate(2px,-1px); }
   }
 
+
+  /* ── SCROLL ARROWS ── */
+  /* Desktop: fixed at bottom of viewport */
+  .arrow-desktop {
+    position: fixed;
+    bottom: 48px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    animation: bounceDown 1.8s ease-in-out infinite;
+    cursor: pointer; white-space: nowrap; z-index: 200;
+    transition: opacity 0.4s ease;
+  }
+  /* Mobile: hidden */
+  @media(max-width:768px) { .arrow-desktop { display: none; } }
+
+  /* Mobile: static inside hero, centered */
+  .arrow-mobile {
+    display: none;
+    flex-direction: column; align-items: center; gap: 4px;
+    color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    animation: bounceDown 1.8s ease-in-out infinite;
+    cursor: pointer; white-space: nowrap;
+    margin-top: 24px; padding-bottom: 16px;
+  }
+  @media(max-width:768px) { .arrow-mobile { display: flex; } }
+
 </style>
 </head>
 <body>
@@ -781,9 +794,8 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
-<!-- SCROLL ARROW -->
-<div id="scroll-arrow" class="scroll-down-arrow" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
-  <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0.75;margin-bottom:8px;display:block">role para baixo</span>
+<div id="scroll-arrow" class="arrow-desktop" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+  <span style="font-size:10px;letter-spacing:3px;opacity:0.75;margin-bottom:6px;display:block">role para baixo</span>
   <div class="chevron-stack">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -816,6 +828,15 @@
   <div class="hero-cta">
     <a href="#contato" class="btn btn-primary">✦ Entrar em Contato</a>
     <a href="https://github.com/euguilouren" target="_blank" class="btn btn-outline">⌥ GitHub</a>
+  </div>
+
+  <div class="arrow-mobile" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+    <span style="font-size:10px;letter-spacing:3px;opacity:0.75;margin-bottom:6px;display:block">role para baixo</span>
+    <div class="chevron-stack">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
   </div>
 </div>
 
