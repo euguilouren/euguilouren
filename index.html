@@ -1552,6 +1552,179 @@ const cardObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.cert-card:not(.stagger-child), .proj-card:not(.stagger-child)').forEach(el => cardObs.observe(el));
+
+// ── AMBIENT UI SOUNDS ──
+(function() {
+  let audioCtx = null;
+  let muted = localStorage.getItem('ui-muted') === '1';
+
+  function getCtx() {
+    if (!audioCtx) {
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) { return null; }
+    }
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function playTone({ freq = 880, duration = 0.08, type = 'sine', volume = 0.08, attack = 0.005, release = 0.06 }) {
+    if (muted) return;
+    const ctx = getCtx();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, now);
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(4000, now);
+
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(volume, now + attack);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration + release);
+  }
+
+  // Sound presets
+  const sounds = {
+    // Soft click — for links and buttons
+    click: () => {
+      playTone({ freq: 1200, duration: 0.06, type: 'sine', volume: 0.05 });
+      setTimeout(() => playTone({ freq: 1600, duration: 0.05, type: 'sine', volume: 0.03 }), 10);
+    },
+    // Impact — for primary CTA clicks
+    impact: () => {
+      playTone({ freq: 180, duration: 0.15, type: 'sine', volume: 0.12 });
+      playTone({ freq: 90, duration: 0.2, type: 'sine', volume: 0.08 });
+    },
+    // Hover — subtle tick on card hover
+    hover: () => {
+      playTone({ freq: 2200, duration: 0.04, type: 'sine', volume: 0.02 });
+    },
+    // Scroll section transition
+    scroll: () => {
+      playTone({ freq: 440, duration: 0.12, type: 'sine', volume: 0.04 });
+      setTimeout(() => playTone({ freq: 660, duration: 0.08, type: 'sine', volume: 0.03 }), 40);
+    }
+  };
+
+  // Unlock audio on first user interaction (browser requirement)
+  const unlock = () => {
+    getCtx();
+    document.removeEventListener('click', unlock);
+    document.removeEventListener('touchstart', unlock);
+  };
+  document.addEventListener('click', unlock, { once: true });
+  document.addEventListener('touchstart', unlock, { once: true });
+
+  // ═══ BIND SOUNDS TO UI EVENTS ═══
+
+  // Nav links — click sound
+  document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => sounds.click());
+  });
+
+  // Primary CTA — impact sound
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('click', () => sounds.impact());
+  });
+
+  // Outline buttons — click sound
+  document.querySelectorAll('.btn-outline, .btn-lang').forEach(btn => {
+    btn.addEventListener('click', () => sounds.click());
+  });
+
+  // Contact cards — click sound
+  document.querySelectorAll('.contact-card').forEach(c => {
+    c.addEventListener('click', () => sounds.impact());
+  });
+
+  // Hamburger toggle
+  const ham = document.getElementById('hamburger');
+  if (ham) ham.addEventListener('click', () => sounds.click());
+
+  // Scroll sound — triggered once per section as user scrolls through
+  let lastSection = null;
+  const scrollObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && e.target.id !== lastSection) {
+        lastSection = e.target.id;
+        sounds.scroll();
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('section, [id^="section"]').forEach(s => {
+    if (s.id) scrollObs.observe(s);
+  });
+
+  // Hover sound on cards (throttled)
+  let lastHover = 0;
+  document.querySelectorAll('.lang-card, .infra-card, .erp-card, .cert-card, .about-stat').forEach(c => {
+    c.addEventListener('mouseenter', () => {
+      const now = Date.now();
+      if (now - lastHover > 100) {
+        sounds.hover();
+        lastHover = now;
+      }
+    });
+  });
+
+  // ═══ MUTE TOGGLE BUTTON ═══
+  const muteBtn = document.createElement('button');
+  muteBtn.id = 'mute-toggle';
+  muteBtn.setAttribute('aria-label', muted ? 'Ativar sons' : 'Desativar sons');
+  muteBtn.innerHTML = muted
+    ? '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+    : '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+  muteBtn.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(13,17,23,0.85);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    cursor: pointer;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.25s ease;
+  `;
+  muteBtn.addEventListener('mouseenter', () => {
+    muteBtn.style.borderColor = 'rgba(201,168,76,0.8)';
+    muteBtn.style.transform = 'scale(1.08)';
+  });
+  muteBtn.addEventListener('mouseleave', () => {
+    muteBtn.style.borderColor = 'rgba(201,168,76,0.4)';
+    muteBtn.style.transform = 'scale(1)';
+  });
+  muteBtn.addEventListener('click', () => {
+    muted = !muted;
+    localStorage.setItem('ui-muted', muted ? '1' : '0');
+    muteBtn.setAttribute('aria-label', muted ? 'Ativar sons' : 'Desativar sons');
+    muteBtn.innerHTML = muted
+      ? '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+      : '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+    if (!muted) sounds.click();
+  });
+  document.body.appendChild(muteBtn);
+})();
+
 </script>
 </div></div></div></body>
 </html>
