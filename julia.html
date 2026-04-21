@@ -1170,6 +1170,87 @@
   .btn-hotmart.soon {
     opacity: 0.45; cursor: not-allowed; pointer-events: none;
   }
+
+  /* ── ÁREA DO MENTOR ── */
+  .area-section { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
+  .area-section-sub { font-size: 14px; color: var(--muted); margin-bottom: 48px; }
+  .area-gate { display: flex; align-items: center; justify-content: center; min-height: 440px; }
+  .area-gate-card {
+    background: var(--surface); border: 1px solid rgba(var(--agr),0.2);
+    border-radius: 24px; padding: 48px 40px; max-width: 440px; width: 100%; text-align: center;
+  }
+  .gate-lock {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(var(--agr),0.08); border: 1px solid rgba(var(--agr),0.2);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+  }
+  .gate-tag { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: block; }
+  .gate-photo { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 14px; overflow: hidden; border: 2px solid rgba(var(--agr),0.3); }
+  .gate-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
+  .gate-name { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+  .gate-role { font-size: 12px; color: var(--gold); margin-bottom: 24px; }
+  .gate-desc { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+  .gate-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .gate-input { width: 100%; padding: 13px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: var(--white); font-size: 14px; font-family: var(--font); outline: none; transition: border-color .2s; }
+  .gate-input:focus { border-color: rgba(var(--agr),0.4); }
+  .gate-input::placeholder { color: var(--muted); }
+  .gate-submit { width: 100%; padding: 14px; border-radius: 100px; border: none; cursor: pointer; background: var(--gold); font-family: 'Plus Jakarta Sans',sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #080810; transition: opacity .2s, transform .2s; }
+  .gate-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+  .gate-notice { font-size: 11px; color: var(--muted); line-height: 1.7; }
+  .area-dash { display: none; }
+  .area-dash.visible { display: block; }
+  .dash-header { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 20px 28px; margin-bottom: 24px; }
+  .dash-welcome { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+  .dash-name { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 17px; font-weight: 800; color: var(--white); }
+  .dash-logout { font-size: 12px; font-weight: 600; padding: 8px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1); color: var(--muted); background: none; cursor: pointer; transition: color .2s, border-color .2s; }
+  .dash-logout:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .dash-tabs { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 2px; }
+  .dash-tab { flex-shrink: 0; padding: 9px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.08); background: none; cursor: pointer; font-size: 11px; font-weight: 600; color: var(--muted); transition: all .2s; white-space: nowrap; }
+  .dash-tab.active { background: rgba(var(--agr),0.1); border-color: rgba(var(--agr),0.35); color: var(--gold); }
+  .dash-panel { display: none; }
+  .dash-panel.active { display: block; }
+  .panel-title { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 19px; font-weight: 800; color: var(--white); margin-bottom: 20px; }
+  .panel-video { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+  .video-placeholder { aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(0,0,0,0.25); color: var(--muted); }
+  .video-placeholder svg { opacity: 0.35; }
+  .vp-label { font-size: 14px; font-weight: 600; color: var(--white); }
+  .vp-hint { font-size: 12px; }
+  .video-embed { display: none; width: 100%; aspect-ratio: 16/9; }
+  .video-embed iframe { width: 100%; height: 100%; border: none; display: block; }
+  .video-url-row { display: flex; gap: 10px; padding: 14px 16px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .video-url-input { flex: 1; min-width: 0; padding: 10px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; color: var(--white); font-size: 13px; font-family: var(--font); outline: none; transition: border-color .2s; }
+  .video-url-input:focus { border-color: rgba(var(--agr),0.35); }
+  .video-url-input::placeholder { color: var(--muted); }
+  .video-load-btn { padding: 10px 18px; border-radius: 10px; background: rgba(var(--agr),0.1); border: 1px solid rgba(var(--agr),0.25); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .5px; cursor: pointer; white-space: nowrap; transition: background .2s; }
+  .video-load-btn:hover { background: rgba(var(--agr),0.2); }
+  .panel-modules { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 20px 24px; margin-bottom: 20px; }
+  .modules-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .modules-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .add-module-btn { font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(var(--agr),0.25); color: var(--gold); background: none; cursor: pointer; transition: background .2s; }
+  .add-module-btn:hover { background: rgba(var(--agr),0.08); }
+  .module-item { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .module-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .module-num { width: 30px; height: 30px; flex-shrink: 0; border-radius: 8px; background: rgba(var(--agr),0.08); border: 1px solid rgba(var(--agr),0.15); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--gold); }
+  .module-name { flex: 1; font-size: 14px; color: var(--white); font-weight: 500; }
+  .module-badge { font-size: 10px; font-weight: 600; letter-spacing: .5px; padding: 3px 10px; border-radius: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); color: var(--muted); }
+  .panel-text { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 20px 24px; margin-bottom: 20px; }
+  .text-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; display: block; }
+  .text-editor { width: 100%; min-height: 110px; background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 13px 15px; color: var(--text); font-size: 13px; font-family: var(--font); line-height: 1.65; resize: vertical; outline: none; transition: border-color .2s; }
+  .text-editor:focus { border-color: rgba(var(--agr),0.3); }
+  .text-editor::placeholder { color: var(--muted); }
+  .text-actions { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+  .text-save-btn { padding: 9px 22px; border-radius: 100px; background: rgba(var(--agr),0.1); border: 1px solid rgba(var(--agr),0.3); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .5px; cursor: pointer; transition: background .2s; }
+  .text-save-btn:hover { background: rgba(var(--agr),0.2); }
+  .text-saved-msg { font-size: 11px; color: var(--gold); display: none; }
+  @media(max-width:768px) {
+    .area-section { padding: 60px 20px; }
+    .area-gate-card { padding: 36px 22px; }
+    .dash-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .panel-title { font-size: 16px; }
+    .video-url-row { flex-direction: column; }
+    .module-name { font-size: 13px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1447,6 +1528,181 @@
 </section>
 
 <div class="section-divider"><div class="section-divider-diamond"></div></div>
+
+<div class="divider"><div class="divider-diamond"></div></div>
+
+<section id="area-mentor" class="area-section" style="--agr:232,220,200">
+  <span class="section-tag">ÁREA EXCLUSIVA</span>
+  <h2 class="section-title reveal">Portal do Mentor</h2>
+  <p class="area-section-sub reveal">Gerencie seus cursos, vídeos e conteúdo — acesso exclusivo.</p>
+
+  <div class="area-gate" id="area-gate">
+    <div class="area-gate-card">
+      <div class="gate-lock">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <span class="gate-tag">Acesso Exclusivo</span>
+      <div class="gate-photo"><img src="assets/julia-photo.jpg" alt="Julia Dayana Pereira"></div>
+      <div class="gate-name">Julia Dayana Pereira</div>
+      <div class="gate-role">Especialista em Estética de Alto Valor</div>
+      <p class="gate-desc">Área de gerenciamento de conteúdo dos seus cursos. Login disponível em breve.</p>
+      <form class="gate-form" onsubmit="return mentorLogin_julia(event)">
+        <input type="email" class="gate-input" id="gate-email-julia" placeholder="E-mail do mentor" autocomplete="email">
+        <input type="password" class="gate-input" id="gate-pass-julia" placeholder="Senha" autocomplete="current-password">
+        <button type="submit" class="gate-submit">Acessar Portal</button>
+      </form>
+      <p class="gate-notice">Sistema de autenticação em construção · Acesso em breve</p>
+    </div>
+  </div>
+
+  <div class="area-dash" id="area-dash">
+    <div class="dash-header">
+      <div>
+        <span class="dash-welcome">Portal do Mentor</span>
+        <span class="dash-name">Julia Dayana Pereira</span>
+      </div>
+      <button class="dash-logout" onclick="mentorLogout_julia()">Sair da Área</button>
+    </div>
+    <div class="dash-tabs" id="dash-tabs-julia">
+      <button class="dash-tab active" onclick="switchCourse_julia(0, this)">Curso 1</button>
+      <button class="dash-tab" onclick="switchCourse_julia(1, this)">Curso 2</button>
+      <button class="dash-tab" onclick="switchCourse_julia(2, this)">Curso 3</button>
+    </div>
+    <div class="dash-panel active" id="panel-julia-0">
+      <div class="panel-title">Estética de Alto Valor: Fundamentos</div>
+      <div class="panel-video">
+        <div class="video-placeholder" id="vph-julia-0">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+          <span class="vp-label">Área de Vídeo</span>
+          <p class="vp-hint">Cole um link do YouTube abaixo</p>
+        </div>
+        <div class="video-embed" id="vem-julia-0"></div>
+        <div class="video-url-row">
+          <input type="text" class="video-url-input" id="vurl-julia-0" placeholder="URL do YouTube (ex: youtube.com/watch?v=...)">
+          <button class="video-load-btn" onclick="loadVideo_julia(0)">Carregar</button>
+        </div>
+      </div>
+      <div class="panel-modules">
+        <div class="modules-header">
+          <span class="modules-label">Módulos</span>
+          <button class="add-module-btn">+ Módulo</button>
+        </div>
+      <div class="module-item">
+        <div class="module-num">01</div>
+        <div class="module-name">Posicionamento Premium</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">02</div>
+        <div class="module-name">Atendimento de Alto Padrão</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">03</div>
+        <div class="module-name">Precificação Estratégica</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      </div>
+      <div class="panel-text">
+        <span class="text-label">Descrição &amp; Material</span>
+        <textarea class="text-editor" id="ted-julia-0" placeholder="Adicione a descrição, ementa ou material de apoio deste curso..."></textarea>
+        <div class="text-actions">
+          <button class="text-save-btn" onclick="saveText_julia(0)">Salvar</button>
+          <span class="text-saved-msg" id="tsaved-julia-0">Salvo!</span>
+        </div>
+      </div>
+    </div>
+    <div class="dash-panel" id="panel-julia-1">
+      <div class="panel-title">Procedimentos Avançados em Skincare</div>
+      <div class="panel-video">
+        <div class="video-placeholder" id="vph-julia-1">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+          <span class="vp-label">Área de Vídeo</span>
+          <p class="vp-hint">Cole um link do YouTube abaixo</p>
+        </div>
+        <div class="video-embed" id="vem-julia-1"></div>
+        <div class="video-url-row">
+          <input type="text" class="video-url-input" id="vurl-julia-1" placeholder="URL do YouTube (ex: youtube.com/watch?v=...)">
+          <button class="video-load-btn" onclick="loadVideo_julia(1)">Carregar</button>
+        </div>
+      </div>
+      <div class="panel-modules">
+        <div class="modules-header">
+          <span class="modules-label">Módulos</span>
+          <button class="add-module-btn">+ Módulo</button>
+        </div>
+      <div class="module-item">
+        <div class="module-num">01</div>
+        <div class="module-name">Análise de Pele</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">02</div>
+        <div class="module-name">Protocolos Premium</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">03</div>
+        <div class="module-name">Resultados e Fidelização</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      </div>
+      <div class="panel-text">
+        <span class="text-label">Descrição &amp; Material</span>
+        <textarea class="text-editor" id="ted-julia-1" placeholder="Adicione a descrição, ementa ou material de apoio deste curso..."></textarea>
+        <div class="text-actions">
+          <button class="text-save-btn" onclick="saveText_julia(1)">Salvar</button>
+          <span class="text-saved-msg" id="tsaved-julia-1">Salvo!</span>
+        </div>
+      </div>
+    </div>
+    <div class="dash-panel" id="panel-julia-2">
+      <div class="panel-title">Negócio na Estética: do Zero ao Premium</div>
+      <div class="panel-video">
+        <div class="video-placeholder" id="vph-julia-2">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+          <span class="vp-label">Área de Vídeo</span>
+          <p class="vp-hint">Cole um link do YouTube abaixo</p>
+        </div>
+        <div class="video-embed" id="vem-julia-2"></div>
+        <div class="video-url-row">
+          <input type="text" class="video-url-input" id="vurl-julia-2" placeholder="URL do YouTube (ex: youtube.com/watch?v=...)">
+          <button class="video-load-btn" onclick="loadVideo_julia(2)">Carregar</button>
+        </div>
+      </div>
+      <div class="panel-modules">
+        <div class="modules-header">
+          <span class="modules-label">Módulos</span>
+          <button class="add-module-btn">+ Módulo</button>
+        </div>
+      <div class="module-item">
+        <div class="module-num">01</div>
+        <div class="module-name">Estruturação do Negócio</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">02</div>
+        <div class="module-name">Marketing Digital</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      <div class="module-item">
+        <div class="module-num">03</div>
+        <div class="module-name">Escalando o Atendimento</div>
+        <span class="module-badge">Em Breve</span>
+      </div>
+      </div>
+      <div class="panel-text">
+        <span class="text-label">Descrição &amp; Material</span>
+        <textarea class="text-editor" id="ted-julia-2" placeholder="Adicione a descrição, ementa ou material de apoio deste curso..."></textarea>
+        <div class="text-actions">
+          <button class="text-save-btn" onclick="saveText_julia(2)">Salvar</button>
+          <span class="text-saved-msg" id="tsaved-julia-2">Salvo!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contato" class="reveal">
   <span class="section-tag">06 · Contato</span>
   <h2 class="section-title">Vamos conversar?</h2>
@@ -2045,6 +2301,62 @@ document.querySelectorAll('.cert-card:not(.stagger-child), .proj-card:not(.stagg
   function hideDevToolsWarning() {
     const w = document.getElementById('devtools-warning');
     if (w) w.style.display = 'none';
+  }
+})();
+
+
+// ── ÁREA DO MENTOR · julia ──
+(function() {
+  var SK = 'mauth_julia';
+  window.mentorLogin_julia = function(e) {
+    e.preventDefault();
+    sessionStorage.setItem(SK, '1');
+    document.getElementById('area-gate').style.display = 'none';
+    var d = document.getElementById('area-dash');
+    d.style.display = 'block'; d.classList.add('visible');
+    loadSavedTexts();
+    return false;
+  };
+  window.mentorLogout_julia = function() {
+    sessionStorage.removeItem(SK);
+    var d = document.getElementById('area-dash');
+    d.classList.remove('visible'); d.style.display = 'none';
+    document.getElementById('area-gate').style.display = 'flex';
+  };
+  window.switchCourse_julia = function(idx, btn) {
+    document.querySelectorAll('#dash-tabs-julia .dash-tab').forEach(function(t,i){ t.classList.toggle('active',i===idx); });
+    document.querySelectorAll('[id^="panel-julia-"]').forEach(function(p,i){ p.classList.toggle('active',i===idx); });
+  };
+  window.loadVideo_julia = function(idx) {
+    var inp = document.getElementById('vurl-julia-'+idx);
+    if (!inp || !inp.value.trim()) return;
+    var m = inp.value.trim().match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+    if (!m) { alert('URL do YouTube inválida'); return; }
+    var em = document.getElementById('vem-julia-'+idx);
+    var ph = document.getElementById('vph-julia-'+idx);
+    em.innerHTML = '<iframe src="https://www.youtube.com/embed/'+m[1]+'?rel=0" allowfullscreen allow="autoplay; encrypted-media"></iframe>';
+    em.style.display = 'block'; ph.style.display = 'none';
+  };
+  window.saveText_julia = function(idx) {
+    var ta = document.getElementById('ted-julia-'+idx);
+    var msg = document.getElementById('tsaved-julia-'+idx);
+    if (!ta) return;
+    localStorage.setItem('mtext_julia_'+idx, ta.value);
+    msg.style.display = 'inline';
+    setTimeout(function(){ msg.style.display = 'none'; }, 2000);
+  };
+  function loadSavedTexts() {
+    for (var i=0;i<3;i++) {
+      var ta = document.getElementById('ted-julia-'+i);
+      var v  = localStorage.getItem('mtext_julia_'+i);
+      if (ta && v) ta.value = v;
+    }
+  }
+  if (sessionStorage.getItem(SK)) {
+    document.getElementById('area-gate').style.display = 'none';
+    var d = document.getElementById('area-dash');
+    d.style.display = 'block'; d.classList.add('visible');
+    loadSavedTexts();
   }
 })();
 
