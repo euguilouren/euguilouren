@@ -208,31 +208,42 @@
     gap: 24px;
     margin-top: 48px;
   }
-  @media(max-width:900px) { .mentors-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; } }
+  @media(max-width:900px) { .mentors-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; } .mentor-card { min-height: 440px; } }
   .mentor-card {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 20px;
-    padding: 36px 28px 28px;
-    display: flex; flex-direction: column; gap: 0;
+    padding: 0;
+    display: flex; flex-direction: column;
     position: relative; overflow: hidden;
+    min-height: 500px;
     transition: transform .4s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
   }
   .mentor-card::before {
     content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 3;
     background: linear-gradient(90deg, transparent, var(--mc), transparent);
     opacity: 0; transition: opacity .3s;
   }
   .mentor-card::after {
     content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(var(--mc-rgb),0.08) 0%, transparent 70%);
-    opacity: 0; transition: opacity .3s; pointer-events: none;
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom,
+      rgba(8,8,16,0.10) 0%,
+      rgba(8,8,16,0.42) 38%,
+      rgba(8,8,16,0.84) 65%,
+      rgba(8,8,16,0.97) 100%);
+    transition: background .5s;
   }
   .mentor-card:hover { transform: translateY(-10px); }
   .mentor-card:hover::before { opacity: 1; }
-  .mentor-card:hover::after { opacity: 1; }
+  .mentor-card:hover::after {
+    background: linear-gradient(to bottom,
+      rgba(8,8,16,0.06) 0%,
+      rgba(8,8,16,0.36) 35%,
+      rgba(8,8,16,0.80) 62%,
+      rgba(8,8,16,0.96) 100%);
+  }
 
   .mentor-card[data-accent="gold"] {
     --mc: #C9A84C; --mc-rgb: 201,168,76;
@@ -256,29 +267,28 @@
     box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.15);
   }
 
-  .mentor-photo-wrap {
-    width: 80px; height: 80px; border-radius: 50%;
-    margin-bottom: 20px; position: relative; overflow: hidden;
-    border: 2px solid rgba(255,255,255,0.08);
-    flex-shrink: 0;
+  .mentor-card-photo {
+    position: absolute; inset: 0; z-index: 0; overflow: hidden;
+    background: #0a0a14;
   }
-  .mentor-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
-  .mentor-initials {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 16px; font-weight: 800; letter-spacing: 2px;
-    color: var(--mc);
-    background: radial-gradient(circle, rgba(var(--mc-rgb),0.12) 0%, transparent 70%);
+  .mentor-card-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center 15%;
+    transition: transform .8s cubic-bezier(.25,.46,.45,.94);
+    display: block;
   }
-  .mentor-card[data-accent="gold"] .mentor-photo-wrap { border-color: rgba(201,168,76,0.3); }
-  .mentor-card[data-accent="pearl"] .mentor-photo-wrap { border-color: rgba(232,220,200,0.3); }
-  .mentor-card[data-accent="violet"] .mentor-photo-wrap { border-color: rgba(139,92,246,0.3); }
+  .mentor-card:hover .mentor-card-photo img { transform: scale(1.06); }
+  .mentor-card-content {
+    position: relative; z-index: 2;
+    padding: 28px 28px 28px;
+    margin-top: auto;
+    display: flex; flex-direction: column;
+  }
 
   .mentor-name {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 20px; font-weight: 800; color: var(--white); line-height: 1.2;
-    margin-bottom: 4px;
+    margin-bottom: 4px; text-shadow: 0 2px 12px rgba(0,0,0,0.8);
   }
   .mentor-specialty {
     font-size: 12px; color: var(--mc); font-weight: 600; letter-spacing: 0.5px;
@@ -462,13 +472,6 @@
 
   /* ── MENTOR CARD IMPROVEMENTS ── */
   .mentor-card { cursor: pointer; }
-  .mentor-photo-wrap {
-    transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
-  }
-  .mentor-card:hover .mentor-photo-wrap {
-    transform: scale(1.08);
-    box-shadow: 0 0 0 4px rgba(var(--mc-rgb), 0.2), 0 0 20px rgba(var(--mc-rgb), 0.15);
-  }
   .mentor-btn { position: relative; overflow: hidden; }
   .mentor-btn::after {
     content: '';
@@ -789,50 +792,56 @@
 
     <!-- LUAN -->
     <div class="mentor-card reveal-scale" data-accent="gold">
-      <div class="mentor-photo-wrap">
-        <img src="assets/photo.jpg" alt="Luan Guilherme Lourenço" onerror="this.parentElement.innerHTML='<div class=\'mentor-initials\'>L·G</div>'">
+      <div class="mentor-card-photo">
+        <img src="assets/photo.jpg" alt="Luan Guilherme Lourenço">
       </div>
-      <div class="mentor-name">Luan Guilherme<br>Lourenço</div>
-      <div class="mentor-specialty">Software Engineer & Contador</div>
-      <p class="mentor-bio">Dupla formação em Engenharia de Software e Ciências Contábeis. Especialista em automação contábil, ERP/CRM e compliance regulatório.</p>
-      <div class="mentor-tags">
-        <span class="mentor-tag">ERP / CRM</span>
-        <span class="mentor-tag">Backend</span>
-        <span class="mentor-tag">Compliance</span>
+      <div class="mentor-card-content">
+        <div class="mentor-name">Luan Guilherme<br>Lourenço</div>
+        <div class="mentor-specialty">Software Engineer & Contador</div>
+        <p class="mentor-bio">Dupla formação em Engenharia de Software e Ciências Contábeis. Especialista em automação contábil, ERP/CRM e compliance regulatório.</p>
+        <div class="mentor-tags">
+          <span class="mentor-tag">ERP / CRM</span>
+          <span class="mentor-tag">Backend</span>
+          <span class="mentor-tag">Compliance</span>
+        </div>
+        <button class="mentor-btn" onclick="openModal('luan')">Ver Cursos & Preços →</button>
       </div>
-      <button class="mentor-btn" onclick="openModal('luan')">Ver Cursos & Preços →</button>
     </div>
 
     <!-- JULIA -->
     <div class="mentor-card reveal-scale" data-accent="pearl" style="transition-delay:.1s">
-      <div class="mentor-photo-wrap">
-        <img src="assets/julia-photo.jpg" alt="Julia Dayana Pereira" onerror="this.parentElement.innerHTML='<div class=\'mentor-initials\'>J·D</div>'">
+      <div class="mentor-card-photo">
+        <img src="assets/julia-photo.jpg" alt="Julia Dayana Pereira">
       </div>
-      <div class="mentor-name">Julia Dayana<br>Pereira</div>
-      <div class="mentor-specialty">Especialista em Estética de Alto Valor</div>
-      <p class="mentor-bio">Profissional de estética premium que alia excelência técnica com posicionamento estratégico para transformar carreiras no setor de beleza.</p>
-      <div class="mentor-tags">
-        <span class="mentor-tag">Skincare</span>
-        <span class="mentor-tag">Estética Premium</span>
-        <span class="mentor-tag">Alto Valor</span>
+      <div class="mentor-card-content">
+        <div class="mentor-name">Julia Dayana<br>Pereira</div>
+        <div class="mentor-specialty">Especialista em Estética de Alto Valor</div>
+        <p class="mentor-bio">Profissional de estética premium que alia excelência técnica com posicionamento estratégico para transformar carreiras no setor de beleza.</p>
+        <div class="mentor-tags">
+          <span class="mentor-tag">Skincare</span>
+          <span class="mentor-tag">Estética Premium</span>
+          <span class="mentor-tag">Alto Valor</span>
+        </div>
+        <button class="mentor-btn" onclick="openModal('julia')">Ver Cursos & Preços →</button>
       </div>
-      <button class="mentor-btn" onclick="openModal('julia')">Ver Cursos & Preços →</button>
     </div>
 
     <!-- MICHAEL -->
     <div class="mentor-card reveal-scale" data-accent="violet" style="transition-delay:.2s">
-      <div class="mentor-photo-wrap">
-        <img src="assets/michael-photo.jpg" alt="Michael Souza" onerror="this.parentElement.innerHTML='<div class=\'mentor-initials\'>M·S</div>'">
+      <div class="mentor-card-photo">
+        <img src="assets/michael-photo.jpg" alt="Michael Souza">
       </div>
-      <div class="mentor-name">Michael<br>Souza</div>
-      <div class="mentor-specialty">Desenvolvedor & Educador</div>
-      <p class="mentor-bio">Mentor especializado em ensinar programação para quem está começando do zero. Metodologia baseada em projetos reais e resultados concretos.</p>
-      <div class="mentor-tags">
-        <span class="mentor-tag">Python</span>
-        <span class="mentor-tag">Lógica</span>
-        <span class="mentor-tag">Iniciante</span>
+      <div class="mentor-card-content">
+        <div class="mentor-name">Michael<br>Souza</div>
+        <div class="mentor-specialty">Desenvolvedor & Educador</div>
+        <p class="mentor-bio">Mentor especializado em ensinar programação para quem está começando do zero. Metodologia baseada em projetos reais e resultados concretos.</p>
+        <div class="mentor-tags">
+          <span class="mentor-tag">Python</span>
+          <span class="mentor-tag">Lógica</span>
+          <span class="mentor-tag">Iniciante</span>
+        </div>
+        <button class="mentor-btn" onclick="openModal('michael')">Ver Cursos & Preços →</button>
       </div>
-      <button class="mentor-btn" onclick="openModal('michael')">Ver Cursos & Preços →</button>
     </div>
 
   </div>
