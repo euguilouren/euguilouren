@@ -1,7 +1,11 @@
+<!-- © Julia Dayana Pereira — Todos os direitos reservados. Reprodução proibida sem autorização expressa. -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+  <meta name="copyright" content="Julia Dayana Pereira — Todos os direitos reservados">
+  <meta name="robots" content="index, follow, noarchive">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julia Dayana Pereira — Mentora · Estética de Alto Valor</title>
 
@@ -1143,6 +1147,14 @@
   .contact-card { transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s, background .3s; }
   .contact-icon { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
   .contact-card:hover .contact-icon { transform: scale(1.15) rotate(5deg); }
+
+  /* ── PROTEÇÃO DE CONTEÚDO ── */
+  img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+  .about-text, .bio-text, .section-title, .hero-name, .hero-sub,
+  .course-title, .course-desc, .erp-name, .lang-name, .infra-name {
+    -webkit-user-select: none; -moz-user-select: none; user-select: none;
+  }
+  @media print { body { display: none !important; } }
 </style>
 </head>
 <body>
@@ -1935,6 +1947,87 @@ document.querySelectorAll('.cert-card:not(.stagger-child), .proj-card:not(.stagg
       setTimeout(() => { window.location.href = target; }, 420);
     });
   });
+})();
+
+
+// ── PROTEÇÃO DE CONTEÚDO ──
+(function() {
+  // 1. Bloquear clique direito
+  document.addEventListener('contextmenu', function(e) {
+    const tag = e.target.tagName.toLowerCase();
+    if (tag === 'img' || tag === 'video') { e.preventDefault(); return false; }
+    // Mostra aviso sutil ao clicar direito em qualquer lugar
+    showProtectionToast();
+    e.preventDefault();
+    return false;
+  });
+
+  // 2. Bloquear atalhos de teclado
+  document.addEventListener('keydown', function(e) {
+    const ctrl = e.ctrlKey || e.metaKey;
+    // Ctrl+U (ver código), Ctrl+S (salvar), Ctrl+Shift+I/J/C (devtools)
+    if (ctrl && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); showProtectionToast(); return false; }
+    if (ctrl && (e.key === 's' || e.key === 'S')) { e.preventDefault(); showProtectionToast(); return false; }
+    if (ctrl && e.shiftKey && ['i','I','j','J','c','C'].includes(e.key)) { e.preventDefault(); showProtectionToast(); return false; }
+    if (e.key === 'F12') { e.preventDefault(); showProtectionToast(); return false; }
+    // PrintScreen
+    if (e.key === 'PrintScreen') { showProtectionToast(); }
+  });
+
+  // 3. Bloquear drag de imagens
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName.toLowerCase() === 'img') { e.preventDefault(); return false; }
+  });
+
+  // 4. Detecção de DevTools aberto (método de diferença de tamanho de janela)
+  let devtoolsOpen = false;
+  const devtoolsCheck = setInterval(function() {
+    const threshold = 160;
+    const widthDiff  = window.outerWidth  - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+    if (widthDiff > threshold || heightDiff > threshold) {
+      if (!devtoolsOpen) {
+        devtoolsOpen = true;
+        showDevToolsWarning();
+      }
+    } else {
+      devtoolsOpen = false;
+      hideDevToolsWarning();
+    }
+  }, 800);
+
+  // 5. Toast de proteção
+  function showProtectionToast() {
+    let t = document.getElementById('protection-toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'protection-toast';
+      t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);z-index:99999;background:#0f0f1a;border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:12px 24px;font-size:12px;font-weight:600;letter-spacing:1px;color:#C9A84C;pointer-events:none;transition:opacity .3s;white-space:nowrap;';
+      t.textContent = '© Conteúdo protegido — todos os direitos reservados';
+      document.body.appendChild(t);
+    }
+    t.style.opacity = '1';
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => { t.style.opacity = '0'; }, 2500);
+  }
+
+  // 6. Aviso de DevTools
+  function showDevToolsWarning() {
+    let w = document.getElementById('devtools-warning');
+    if (!w) {
+      w = document.createElement('div');
+      w.id = 'devtools-warning';
+      w.style.cssText = 'position:fixed;top:80px;right:24px;z-index:99999;background:#0f0f1a;border:1px solid rgba(201,168,76,0.25);border-radius:14px;padding:16px 20px;font-size:12px;color:#7070a0;max-width:260px;line-height:1.5;';
+      w.innerHTML = '<span style="color:#C9A84C;font-weight:700;display:block;margin-bottom:4px">⚠ Conteúdo Protegido</span>Este site é propriedade intelectual registrada. A reprodução não autorizada é proibida.';
+      document.body.appendChild(w);
+    }
+    w.style.display = 'block';
+  }
+
+  function hideDevToolsWarning() {
+    const w = document.getElementById('devtools-warning');
+    if (w) w.style.display = 'none';
+  }
 })();
 
 </script>
