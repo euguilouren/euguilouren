@@ -1040,14 +1040,14 @@ function openModal(mentorKey) {
   coursesEl.innerHTML = d.courses.map(c => {
     const hasUrl = c.url && c.url.trim() !== '';
     const btn = hasUrl
-      ? `<a href="${'${c.url}'}" target="_blank" rel="noopener noreferrer" class="modal-course-buy active">🛒 Comprar no Hotmart</a>`
+      ? `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="modal-course-buy active">🛒 Comprar no Hotmart</a>`
       : `<span class="modal-course-buy soon">🔒 Em Breve</span>`;
     return `
     <div class="modal-course-card">
-      <div class="modal-course-icon">${'${c.icon}'}</div>
-      <div class="modal-course-name">${'${c.name}'}</div>
-      <div class="modal-course-level">${'${c.level}'}</div>
-      <div class="modal-course-price">${'${c.price}'}</div>
+      <div class="modal-course-icon">${c.icon}</div>
+      <div class="modal-course-name">${c.name}</div>
+      <div class="modal-course-level">${c.level}</div>
+      <div class="modal-course-price">${c.price}</div>
       ${btn}
     </div>`;
   }).join('');
